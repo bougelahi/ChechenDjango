@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+
+<h1>Author</h1>
+
+<table border="1" cellpadding="5px">
+    <tr style="background-color: #F99">
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    {% for author in authors %}
+        <tr>
+            <td>{{ author.id }}</td>
+            <td>{{ author.name }}</td>
+            <td><a href="editAuthor/{{ author.id }}">Изменить</a></td>
+            <td><a href="deleteAuthor/{{ author.id }}"> Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="saveAuthor">
+    <button type="submit">Добавить</button>
+</form>
+
+<h1>Persons</h1>
+
+<table border="1" cellpadding="5px">
+    <tr style="background-color: #F99">
+        <td>ID</td>
+        <td>NAME</td>
+    </tr>
+    {% for person in persons %}
+        <tr>
+            <td>{{ person.id }}</td>
+            <td>{{ person.name }}</td>
+            <td><a href="editPerson/{{ person.id }}">Изменить</a></td>
+            <td><a href="deletePerson/{{ person.id }}"> Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="savePerson">
+    <button type="submit">Добавить</button>
+</form>
+
+<h1>PersonType</h1>
+
+<table border="1" cellpadding="5px">
+    <tr style="background-color: #F99">
+        <td>ID</td>
+        <td>NAME</td>
+    </tr>
+    {% for personType in personTypes %}
+        <tr>
+            <td>{{ personType.id }}</td>
+            <td>{{ personType.name }}</td>
+            <td><a href="editPersonType/{{ personType.id }}">Изменить</a></td>
+            <td><a href="deletePersonType/{{ personType.id }}"> Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="savePersonType">
+    <button type="submit">Добавить</button>
+</form>
+
+<h1>Story</h1>
+
+<table border="1" cellpadding="5px">
+    <tr style="background-color: #F99">
+        <td>ID</td>
+        <td>NAME</td>
+        <td>text</td>
+    </tr>
+    {% for story in stories %}
+        <tr>
+            <td>{{ story.id }}</td>
+            <td>{{ story.name }}</td>
+            <td>{{ story.text }}</td>
+            <td><a href="editStory/{{ story.id }}">Изменить</a></td>
+            <td><a href="deleteStory/{{ story.id }}"> Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="saveStory">
+    <button type="submit">Добавить</button>
+</form>
+
+<h1>PersonStory</h1>
+
+<table border="1" cellpadding="5px">
+    <tr style="background-color: #F99">
+        <td>ID</td>
+        <td>PERSON</td>
+        <td>PERSONTYPE</td>
+        <td>STORY</td>
+        <td>SUBNAME</td>
+    </tr>
+    {% for personStory in personStories %}
+        <tr>
+            <td>{{ personStory.id }}</td>
+            <td>{{ personStory.person.id }}</td>
+            <td>{{ personStory.personType.id }}</td>
+            <td>{{ personStory.story.id }}</td>
+            <td>{{ personStory.subName }}</td>
+            <td><a href="editPersonStory/{{ personStory.id }}">Изменить</a></td>
+            <td><a href="deletePersonStory/{{ personStory.id }}"> Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="savePersonStory">
+    <button type="submit">Добавить</button>
+</form>
+
+<h1>AuthorStory</h1>
+
+<table border="1" cellpadding="5px">
+    <tr style="background-color: #F99">
+        <td>ID</td>
+        <td>AUTHOR</td>
+        <td>PERSON</td>
+    </tr>
+    {% for authorStory in authorStories %}
+        <tr>
+            <td>{{ authorStory.id }}</td>
+            <td>{{ authorStory.author.id }}</td>
+            <td>{{ authorStory.story.id }}</td>
+            <td><a href="editAuthorStory/{{ authorStory.id }}">Изменить</a></td>
+            <td><a href="deleteAuthorStory/{{ authorStory.id }}"> Удалить</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<form action="saveAuthorStory">
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>
